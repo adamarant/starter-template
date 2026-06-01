@@ -114,7 +114,7 @@ Lint:           npm run lint
 Design System:  node_modules/@digiko-npm/designsystem/
 DS Source:      node_modules/@digiko-npm/designsystem/src/
 DS Compiled:    node_modules/@digiko-npm/designsystem/dist/designsystem.css
-DS Repo:        github.com/digiko-dev/designsystem
+DS Repo:        github.com/adamarant/designsystem
 ```
 
 ---
