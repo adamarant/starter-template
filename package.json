@@ -10,8 +10,8 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@digiko-npm/designsystem": "^0.11.0",
-    "@digiko-npm/ds-react": "^0.5.1",
+    "@adamarant/designsystem": "^0.11.2",
+    "@adamarant/ds-react": "^0.5.2",
     "clsx": "^2.1.1",
     "geist": "^1.7.0",
     "lucide-react": "^0.575.0",

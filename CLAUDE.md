@@ -14,7 +14,7 @@ Customizzazioni CSS project-specific: [DS_CUSTOM.md](DS_CUSTOM.md) — consultar
 Starter template with dashboard layout. Built on the Digiko Design System.
 
 **Stack:** Next.js (App Router), React, TypeScript
-**Design System:** `@digiko-npm/designsystem` (CSS-only, installed from npm — vedi `package.json` per versione corrente)
+**Design System:** `@adamarant/designsystem` (CSS-only, installed from npm — vedi `package.json` per versione corrente)
 **Deploy:** Vercel
 **Typography:** Clash Display (headings) + Switzer (body) + Geist Mono (code)
 **Theme:** Dark default, light + system supported via `next-themes`
@@ -36,15 +36,15 @@ Add more config files as the project grows (copy.ts, auth.ts, env.ts, etc.).
 
 ### 2. Design System — Single Source of Truth
 
-The design system is installed from `@digiko-npm/designsystem`. Always read source before using a component:
+The design system is installed from `@adamarant/designsystem`. Always read source before using a component:
 
 | What you need | Where to look |
 |---------------|---------------|
-| Component classes (`ds-btn`, `ds-card`, etc.) | `node_modules/@digiko-npm/designsystem/src/components/` |
-| Token values (colors, spacing, radius) | `node_modules/@digiko-npm/designsystem/src/tokens/` |
-| Utility classes | `node_modules/@digiko-npm/designsystem/src/utilities/` |
-| Full compiled CSS | `node_modules/@digiko-npm/designsystem/dist/designsystem.css` |
-| Usage examples | `node_modules/@digiko-npm/designsystem/examples/index.html` |
+| Component classes (`ds-btn`, `ds-card`, etc.) | `node_modules/@adamarant/designsystem/src/components/` |
+| Token values (colors, spacing, radius) | `node_modules/@adamarant/designsystem/src/tokens/` |
+| Utility classes | `node_modules/@adamarant/designsystem/src/utilities/` |
+| Full compiled CSS | `node_modules/@adamarant/designsystem/dist/designsystem.css` |
+| Usage examples | `node_modules/@adamarant/designsystem/examples/index.html` |
 
 For DS styling rules, component-first approach, and usage patterns → DS_HEALTH.md
 
@@ -52,7 +52,7 @@ For DS styling rules, component-first approach, and usage patterns → DS_HEALTH
 
 ```css
 /* globals.css */
-@import "@digiko-npm/designsystem";   /* All DS tokens, components, utilities */
+@import "@adamarant/designsystem";   /* All DS tokens, components, utilities */
 @import "../styles/components.css";    /* Project-specific component classes */
 ```
 
@@ -111,9 +111,9 @@ Local URL:      http://starter.test (PM2 + Caddy, port 4006)
 Dev server:     npm run dev (only for hot-reload when actively developing)
 Build:          npm run build
 Lint:           npm run lint
-Design System:  node_modules/@digiko-npm/designsystem/
-DS Source:      node_modules/@digiko-npm/designsystem/src/
-DS Compiled:    node_modules/@digiko-npm/designsystem/dist/designsystem.css
+Design System:  node_modules/@adamarant/designsystem/
+DS Source:      node_modules/@adamarant/designsystem/src/
+DS Compiled:    node_modules/@adamarant/designsystem/dist/designsystem.css
 DS Repo:        github.com/adamarant/designsystem
 ```
 
