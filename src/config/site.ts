@@ -3,7 +3,7 @@ import { ROUTES } from './routes'
 export const siteConfig = {
   name: 'My App',
   title: 'My App — Dashboard',
-  description: 'A modern dashboard built with Next.js and the Digiko Design System.',
+  description: 'A modern dashboard built with Next.js.',
   url: 'https://myapp.com',
 
   nav: [
