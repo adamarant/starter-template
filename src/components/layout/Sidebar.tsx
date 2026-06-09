@@ -84,13 +84,6 @@ export function Sidebar({ open, onClose }: SidebarProps) {
             })}
           </ul>
         </nav>
-
-        {/* Footer */}
-        <div className="ds-border-t ds-px-6 ds-py-4">
-          <p className="ds-text-xs ds-text-tertiary">
-            Built with Digiko DS
-          </p>
-        </div>
       </aside>
     </>
   )
