@@ -11,21 +11,21 @@
   },
   "dependencies": {
     "@adamarant/designsystem": "^0.16.0",
-    "@adamarant/ds-react": "^0.7.0",
+    "@adamarant/ds-react": "^0.8.0",
     "clsx": "^2.1.1",
     "geist": "^1.7.0",
-    "lucide-react": "^0.575.0",
-    "next": "16.1.6",
+    "lucide-react": "^1.23.0",
+    "next": "16.2.10",
     "next-themes": "^0.4.6",
-    "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react": "19.2.7",
+    "react-dom": "19.2.7"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.1.6",
+    "eslint-config-next": "16.2.10",
     "typescript": "^5"
   }
 }
