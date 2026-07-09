@@ -2,25 +2,25 @@
 
 import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
-import { Sun, Moon } from 'lucide-react'
+import { ThemeToggle as DSThemeToggle } from '@adamarant/ds-react'
 
 export function ThemeToggle() {
-  const { theme, setTheme } = useTheme()
+  const { resolvedTheme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => setMounted(true), [])
 
-  if (!mounted) {
-    return <button className="ds-btn ds-btn--ghost ds-btn--icon" aria-label="Toggle theme" />
-  }
+  // Before mount next-themes hasn't resolved the theme; render inert at the
+  // provider default (dark) — both icons are always visible, only the thumb
+  // settles once mounted.
+  const theme = mounted ? (resolvedTheme === 'light' ? 'light' : 'dark') : 'dark'
 
   return (
-    <button
-      onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-      className="ds-btn ds-btn--ghost ds-btn--icon"
-      aria-label="Toggle theme"
-    >
-      {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
-    </button>
+    <DSThemeToggle
+      size="lg"
+      theme={theme}
+      onThemeChange={(next) => setTheme(next)}
+      disabled={!mounted}
+    />
   )
 }
