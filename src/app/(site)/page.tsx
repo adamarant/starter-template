@@ -1,0 +1,91 @@
+import Link from 'next/link'
+import { ROUTES } from '@/config/routes'
+import { Zap, ShieldCheck, Gauge } from 'lucide-react'
+
+const features = [
+  {
+    icon: Zap,
+    eyebrow: 'Fast',
+    title: 'Ship in minutes',
+    body: 'A public site and a dashboard, wired together and ready to extend. No boilerplate to write twice.',
+  },
+  {
+    icon: ShieldCheck,
+    eyebrow: 'Consistent',
+    title: 'Design system native',
+    body: 'Every surface is built on the Adamarant design system — tokens, components, light and dark out of the box.',
+  },
+  {
+    icon: Gauge,
+    eyebrow: 'Modern',
+    title: 'Motion that feels premium',
+    body: 'A floating header with a fullscreen mobile overlay, staggered reveals, and reduced-motion support baked in.',
+  },
+]
+
+export default function HomePage() {
+  return (
+    <>
+      {/* Hero */}
+      <section className="ds-section ds-min-h-screen ds-flex ds-items-center">
+        <div className="ds-container ds-flex ds-flex-col ds-items-center ds-text-center ds-gap-6 ds-max-w-3xl ds-mx-auto">
+          <p className="ds-overline">Starter template</p>
+          <h1 className="ds-hero-title">A website and a dashboard, in one starter.</h1>
+          <p className="ds-editorial-lede">
+            Header, content, footer, and a modern fullscreen mobile menu — plus the
+            dashboard you already know. Start from a real site, not a blank page.
+          </p>
+          <div className="ds-flex ds-flex-wrap ds-justify-center ds-gap-3">
+            <Link href={ROUTES.dashboard} className="ds-btn ds-btn--pill ds-btn--xl">
+              Open the dashboard
+            </Link>
+            <Link
+              href={ROUTES.features}
+              className="ds-btn ds-btn--outline ds-btn--pill ds-btn--xl"
+            >
+              See features
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Feature grid */}
+      <section id="features" className="ds-section ds-border-t">
+        <div className="ds-container ds-flex ds-flex-col ds-gap-8">
+          <div className="ds-flex ds-flex-col ds-gap-4 ds-max-w-2xl">
+            <p className="ds-overline">Features</p>
+            <h2 className="ds-section-title">Everything a new project reuses.</h2>
+          </div>
+          <div className="ds-grid ds-grid-cols-1 ds-md:grid-cols-3 ds-gap-6">
+            {features.map((f) => (
+              <div key={f.title} className="ds-card ds-card__body ds-flex ds-flex-col ds-gap-3">
+                <f.icon size={22} className="ds-text-secondary" />
+                <p className="ds-overline">{f.eyebrow}</p>
+                <h3 className="ds-card__title">{f.title}</h3>
+                <p>{f.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA band */}
+      <section id="pricing" className="ds-section ds-border-t">
+        <div className="ds-container ds-flex ds-flex-col ds-items-center ds-text-center ds-gap-6 ds-max-w-2xl ds-mx-auto">
+          <h2 className="ds-section-title">Start building.</h2>
+          <p className="ds-editorial-lede">
+            Clone it, rename the config, and you have a site and an app ready to grow.
+          </p>
+          <div className="ds-flex ds-gap-3">
+            <Link href={ROUTES.dashboard} className="ds-btn ds-btn--pill ds-btn--lg">
+              Get started
+            </Link>
+            <Link href={ROUTES.about} className="ds-btn ds-btn--outline ds-btn--pill ds-btn--lg">
+              Learn more
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
+  )
+}
