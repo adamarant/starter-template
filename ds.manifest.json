@@ -4,13 +4,13 @@
   "ds_version_declared": "^0.17.2",
   "ds_version_resolved": "0.17.2",
   "ds_version_installed": "0.17.2",
-  "last_session": "2026-06-29",
+  "last_session": "2026-07-10",
   "overrides": {
     "token_count": 0,
     "token_list": [],
     "component_override_count": 0,
     "component_override_list": [],
-    "custom_class_count": 0,
+    "custom_class_count": 15,
     "files_with_overrides": []
   },
   "css_architecture": {
@@ -18,15 +18,16 @@
       "ds"
     ],
     "override_isolation": "isolated",
-    "total_css_lines": 27
+    "total_css_lines": 158
   },
   "metrics": {
     "override_count": 0,
-    "custom_class_count": 0,
+    "custom_class_count": 15,
     "delta": 0,
-    "last_updated": "2026-07-09"
+    "last_updated": "2026-07-10"
   },
   "compliance": "green",
   "governance": "active",
-  "notes": null
+  "notes": null,
+  "last_session_summary": "Aggiunto site shell pubblico (SiteHeader+overlay mobile fullscreen, SiteFooter, landing) accanto alla dashboard; dashboard spostata in /dashboard."
 }
