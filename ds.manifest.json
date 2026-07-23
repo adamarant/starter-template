@@ -24,10 +24,9 @@
     "override_count": 0,
     "custom_class_count": 15,
     "delta": 0,
-    "last_updated": "2026-07-10"
+    "last_updated": "2026-07-23"
   },
   "compliance": "green",
   "governance": "active",
-  "notes": null,
-  "last_session_summary": "Aggiunto site shell pubblico (SiteHeader+overlay mobile fullscreen, SiteFooter, landing) accanto alla dashboard; dashboard spostata in /dashboard."
+  "notes": null
 }
