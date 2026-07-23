@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { siteConfig } from '@/config/site'
 import { ROUTES } from '@/config/routes'
+import { IconBtn } from '@adamarant/ds-react'
 import { ThemeToggle } from '@/components/ui/ThemeToggle'
 import { cn } from '@/lib/utils'
 
@@ -56,9 +57,8 @@ export function SiteHeader() {
         {/* Mobile controls */}
         <div className="ds-flex ds-items-center ds-gap-2 ds-md:hidden">
           <ThemeToggle />
-          <button
+          <IconBtn
             onClick={() => setMobileOpen((v) => !v)}
-            className="ds-icon-btn"
             aria-label="Toggle menu"
             aria-expanded={mobileOpen}
           >
@@ -66,7 +66,7 @@ export function SiteHeader() {
               <span className="burger__line" />
               <span className="burger__line" />
             </span>
-          </button>
+          </IconBtn>
         </div>
       </header>
 

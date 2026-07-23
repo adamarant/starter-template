@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { Flex, Grid } from '@adamarant/ds-react'
 import { ROUTES } from '@/config/routes'
 import { Zap, ShieldCheck, Gauge } from 'lucide-react'
 
@@ -28,14 +29,19 @@ export default function HomePage() {
     <>
       {/* Hero */}
       <section className="ds-section ds-min-h-screen ds-flex ds-items-center">
-        <div className="ds-container ds-flex ds-flex-col ds-items-center ds-text-center ds-gap-6 ds-max-w-3xl ds-mx-auto">
+        <Flex
+          direction="col"
+          align="center"
+          gap="6"
+          className="ds-container ds-text-center ds-max-w-3xl ds-mx-auto"
+        >
           <p className="ds-overline">Starter template</p>
           <h1 className="ds-hero-title">A website and a dashboard, in one starter.</h1>
           <p className="ds-editorial-lede">
             Header, content, footer, and a modern fullscreen mobile menu — plus the
             dashboard you already know. Start from a real site, not a blank page.
           </p>
-          <div className="ds-flex ds-flex-wrap ds-justify-center ds-gap-3">
+          <Flex justify="center" gap="3" className="ds-flex-wrap">
             <Link href={ROUTES.dashboard} className="ds-btn ds-btn--pill ds-btn--xl">
               Open the dashboard
             </Link>
@@ -45,18 +51,18 @@ export default function HomePage() {
             >
               See features
             </Link>
-          </div>
-        </div>
+          </Flex>
+        </Flex>
       </section>
 
       {/* Feature grid */}
       <section id="features" className="ds-section ds-border-t">
-        <div className="ds-container ds-flex ds-flex-col ds-gap-8">
-          <div className="ds-flex ds-flex-col ds-gap-4 ds-max-w-2xl">
+        <Flex direction="col" gap="8" className="ds-container">
+          <Flex direction="col" gap="4" className="ds-max-w-2xl">
             <p className="ds-overline">Features</p>
             <h2 className="ds-section-title">Everything a new project reuses.</h2>
-          </div>
-          <div className="ds-grid ds-grid-cols-1 ds-md:grid-cols-3 ds-gap-6">
+          </Flex>
+          <Grid cols="1" gap="6" className="ds-md:grid-cols-3">
             {features.map((f) => (
               <div key={f.title} className="ds-card ds-card__body ds-flex ds-flex-col ds-gap-3">
                 <f.icon size={22} className="ds-text-secondary" />
@@ -65,13 +71,18 @@ export default function HomePage() {
                 <p>{f.body}</p>
               </div>
             ))}
-          </div>
-        </div>
+          </Grid>
+        </Flex>
       </section>
 
       {/* CTA band */}
       <section id="pricing" className="ds-section ds-border-t">
-        <div className="ds-container ds-flex ds-flex-col ds-items-center ds-text-center ds-gap-6 ds-max-w-2xl ds-mx-auto">
+        <Flex
+          direction="col"
+          align="center"
+          gap="6"
+          className="ds-container ds-text-center ds-max-w-2xl ds-mx-auto"
+        >
           <h2 className="ds-section-title">Start building.</h2>
           <p className="ds-editorial-lede">
             Clone it, rename the config, and you have a site and an app ready to grow.
@@ -84,7 +95,7 @@ export default function HomePage() {
               Learn more
             </Link>
           </div>
-        </div>
+        </Flex>
       </section>
     </>
   )

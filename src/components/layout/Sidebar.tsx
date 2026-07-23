@@ -1,90 +1,19 @@
-'use client'
-
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 import { siteConfig } from '@/config/site'
-import { cn } from '@/lib/utils'
-import {
-  LayoutDashboard,
-  FolderKanban,
-  Users,
-  BarChart3,
-  Settings,
-  X,
-} from 'lucide-react'
+import { DashboardNav } from './DashboardNav'
 
-const iconMap: Record<string, React.ElementType> = {
-  LayoutDashboard,
-  FolderKanban,
-  Users,
-  BarChart3,
-  Settings,
-}
-
-interface SidebarProps {
-  open: boolean
-  onClose: () => void
-}
-
-export function Sidebar({ open, onClose }: SidebarProps) {
-  const pathname = usePathname()
-
+/* Desktop-only: `.ds-admin__sidebar` is hidden under 1024px by the DS.
+   The mobile menu is a Drawer, mounted by DashboardShell — that is the
+   documented admin-layout contract (admin-layout.css header notes). */
+export function Sidebar() {
   return (
-    <>
-      {/* Mobile overlay */}
-      {open && (
-        <div
-          className="ds-admin__overlay ds-lg:hidden"
-          onClick={onClose}
-        />
-      )}
-
-      <aside
-        className={cn(
-          'ds-admin__sidebar',
-          open && 'ds-admin__sidebar--open'
-        )}
-      >
-        {/* Brand */}
-        <div className="ds-flex ds-h-16 ds-items-center ds-justify-between ds-border-b ds-px-6">
-          <Link href="/" className="ds-heading-ui ds-text-lg ds-text-primary">
-            {siteConfig.name}
-          </Link>
-          <button
-            onClick={onClose}
-            className="ds-btn ds-btn--ghost ds-btn--icon ds-lg:hidden"
-            aria-label="Close sidebar"
-          >
-            <X size={18} />
-          </button>
-        </div>
-
-        {/* Navigation */}
-        <nav className="ds-flex-1 ds-overflow-y-auto ds-px-3 ds-py-4">
-          <ul className="ds-space-y-1">
-            {siteConfig.dashboardNav.map((item) => {
-              const Icon = iconMap[item.icon] ?? LayoutDashboard
-              const isActive = pathname === item.href
-
-              return (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    onClick={onClose}
-                    className={cn(
-                      'ds-admin__nav-item',
-                      isActive && 'ds-admin__nav-item--active'
-                    )}
-                  >
-                    <Icon size={18} />
-                    {item.label}
-                  </Link>
-                </li>
-              )
-            })}
-          </ul>
-        </nav>
-      </aside>
-    </>
+    <aside className="ds-admin__sidebar">
+      <div className="ds-admin__sidebar-header">
+        <Link href="/" className="ds-heading-ui ds-text-lg ds-text-primary">
+          {siteConfig.name}
+        </Link>
+      </div>
+      <DashboardNav />
+    </aside>
   )
 }

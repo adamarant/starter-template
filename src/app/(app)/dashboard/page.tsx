@@ -1,3 +1,4 @@
+import { Button, Grid } from '@adamarant/ds-react'
 import { DashboardShell } from '@/components/layout/DashboardShell'
 import { TrendingUp, Users, FolderKanban, Activity } from 'lucide-react'
 
@@ -47,7 +48,7 @@ export default function DashboardPage() {
       </div>
 
       {/* Content grid */}
-      <div className="ds-mt-8 ds-grid ds-grid-cols-1 ds-gap-6 ds-lg:grid-cols-3">
+      <Grid cols="1" gap="6" className="ds-mt-8 ds-lg:grid-cols-3">
         {/* Activity table */}
         <div className="ds-lg:col-span-2">
           <div className="ds-card">
@@ -91,13 +92,13 @@ export default function DashboardPage() {
             <h3 className="ds-card__title">Quick Actions</h3>
           </div>
           <div className="ds-card__body ds-space-y-3">
-            <button className="ds-btn ds-btn--full">New Project</button>
-            <button className="ds-btn ds-btn--secondary ds-btn--full">Invite Member</button>
-            <button className="ds-btn ds-btn--outline ds-btn--full">View Reports</button>
-            <button className="ds-btn ds-btn--ghost ds-btn--full">Settings</button>
+            <Button full>New Project</Button>
+            <Button variant="secondary" full>Invite Member</Button>
+            <Button variant="outline" full>View Reports</Button>
+            <Button variant="ghost" full>Settings</Button>
           </div>
         </div>
-      </div>
+      </Grid>
     </DashboardShell>
   )
 }

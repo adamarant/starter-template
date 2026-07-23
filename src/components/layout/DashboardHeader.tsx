@@ -1,6 +1,7 @@
 'use client'
 
 import { Menu } from 'lucide-react'
+import { Avatar, Flex, IconBtn } from '@adamarant/ds-react'
 import { ThemeToggle } from '@/components/ui/ThemeToggle'
 
 interface DashboardHeaderProps {
@@ -9,23 +10,23 @@ interface DashboardHeaderProps {
 
 export function DashboardHeader({ onMenuClick }: DashboardHeaderProps) {
   return (
-    <header className="ds-admin__header ds-flex ds-h-16 ds-items-center ds-justify-between ds-px-6">
-      <div className="ds-flex ds-items-center ds-gap-3">
-        <button
-          onClick={onMenuClick}
-          className="ds-btn ds-btn--ghost ds-btn--icon ds-lg:hidden"
-          aria-label="Open menu"
-        >
-          <Menu size={18} />
-        </button>
-        <h1 className="ds-text-lg">Dashboard</h1>
-      </div>
+    <header className="ds-admin__header">
+      <div className="ds-admin__header-inner">
+        <Flex align="center" gap="3">
+          <IconBtn
+            aria-label="Open menu"
+            onClick={onMenuClick}
+            className="ds-lg:hidden"
+          >
+            <Menu size={18} />
+          </IconBtn>
+          <h1 className="ds-text-lg">Dashboard</h1>
+        </Flex>
 
-      <div className="ds-flex ds-items-center ds-gap-2">
-        <ThemeToggle />
-        <div className="ds-flex ds-h-8 ds-w-8 ds-items-center ds-justify-center ds-rounded-full ds-bg-inverted ds-text-on-inverted ds-text-sm ds-font-medium">
-          U
-        </div>
+        <Flex align="center" gap="2">
+          <ThemeToggle />
+          <Avatar size="sm">U</Avatar>
+        </Flex>
       </div>
     </header>
   )
