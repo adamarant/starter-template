@@ -10,7 +10,7 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@adamarant/designsystem": "^0.24.0",
+    "@adamarant/designsystem": "^0.25.0",
     "@adamarant/ds-react": "^1.0.0",
     "clsx": "^2.1.1",
     "geist": "^1.7.0",

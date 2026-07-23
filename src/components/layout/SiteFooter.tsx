@@ -4,7 +4,7 @@ import { siteConfig } from '@/config/site'
 
 export function SiteFooter() {
   return (
-    <footer className="ds-section ds-border-t">
+    <footer className="ds-section ds-section--bordered">
       <Flex direction="col" gap="8" className="ds-container">
         <Flex justify="between" gap="6" className="ds-flex-wrap">
           <p className="ds-heading-ui">{siteConfig.name}</p>

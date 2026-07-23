@@ -56,7 +56,7 @@ export default function HomePage() {
       </section>
 
       {/* Feature grid */}
-      <section id="features" className="ds-section ds-border-t">
+      <section id="features" className="ds-section ds-section--bordered">
         <Flex direction="col" gap="8" className="ds-container">
           <Flex direction="col" gap="4" className="ds-max-w-2xl">
             <p className="ds-overline">Features</p>
@@ -76,7 +76,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA band */}
-      <section id="pricing" className="ds-section ds-border-t">
+      <section id="pricing" className="ds-section ds-section--bordered">
         <Flex
           direction="col"
           align="center"
