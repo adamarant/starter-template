@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@adamarant/designsystem": "^0.27.0",
-    "@adamarant/ds-react": "^1.8.0",
+    "@adamarant/ds-react": "^1.10.0",
     "clsx": "^2.1.1",
     "geist": "^1.7.0",
     "lucide-react": "^1.23.0",
